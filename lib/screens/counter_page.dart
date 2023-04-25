@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import '../models/counter.dart';
+import 'first_page.dart';
 
 class CounterPage extends StatelessWidget {
   final StreamController<Counter> _counterStreamController = StreamController<Counter>();
@@ -36,7 +37,9 @@ class CounterPage extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter, // Call the _incrementCounter method on button press
+        onPressed: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => FirstPage()));
+        }, // Call the _incrementCounter method on button press
         child: const Icon(Icons.add),
       ),
     );
